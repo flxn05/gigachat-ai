@@ -25,28 +25,33 @@ h1 {
   height: 5rem;
   color: white;
   background-color: rgba(26, 26, 26, 0.5);
+  position: fixed;
+  text-align: center;
+  width: 100vw;
 }
 #chatSection {
   height: calc(100vh - 12rem);
 }
-#inputSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.inputSection {
+  position: fixed;
+  width: 100vw;
+  bottom: 4rem;
 }
 input {
   background-color: var(--secondBg);
   border: none;
   border-radius: .75rem;
   padding-block: .5rem;
-  width: 66vw;
+  width: 56vw;
   text-align: left;
   padding-inline: .75rem;
+  margin-right: 4px;
 }
 input::placeholder {
   color: var(--defaultText);
   font-family: monospace;
   text-align: center;
+
 }
 input:focus {
   outline: none;
@@ -72,12 +77,16 @@ input:focus {
   width: 1.5rem;
   padding: 0;
   margin: 0;
-  translate: -1px 1px;
+  translate: -2px 2px;
 }
 .smallText {
   font-size: .6rem;
   line-height: 1.2rem;
   text-align: center;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }
 p {
   font-size: 1.1rem;
