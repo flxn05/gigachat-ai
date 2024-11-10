@@ -4,6 +4,10 @@
   --thirdBg: rgb(46, 46, 46);
   --defaultText: lightgrey;
 }
+::selection {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
 
 
 * {
@@ -25,12 +29,17 @@ h1 {
 #chatSection {
   height: calc(100vh - 12rem);
 }
+#inputSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 input {
   background-color: var(--secondBg);
   border: none;
   border-radius: .75rem;
   padding-block: .5rem;
-  width: 90vw;
+  width: 80vw;
   text-align: left;
   padding-inline: .75rem;
 }
@@ -41,6 +50,31 @@ input::placeholder {
 }
 input:focus {
   outline: none;
+}
+#sendButton {
+  right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  translate: 0 .4rem;
+  background-color: var(--defaultText);
+}
+#sendButton:focus {
+  filter: brightness(.75);
+  outline: none;
+}
+.sendAnimation {
+  animation: sendAnimation .25s ease both;
+}
+.sendImage {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0;
+  translate: -1px 1px;
 }
 .smallText {
   font-size: .6rem;
