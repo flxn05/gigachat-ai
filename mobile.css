@@ -35,14 +35,14 @@ h1 {
 .inputSection {
   position: fixed;
   width: 100vw;
-  bottom: 4rem;
+  bottom: 5rem;
 }
 input {
   background-color: var(--secondBg);
   border: none;
   border-radius: .75rem;
   padding-block: .5rem;
-  width: 56vw;
+  width: 60vw;
   text-align: left;
   padding-inline: .75rem;
   margin-right: 4px;
@@ -51,6 +51,7 @@ input::placeholder {
   color: var(--defaultText);
   font-family: monospace;
   text-align: center;
+  font-size: .75rem;
 
 }
 input:focus {
