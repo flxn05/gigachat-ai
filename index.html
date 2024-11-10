@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+  
+<h1>gigaCHAT <span>AI</span></h1>
+<!--<input class="input" type="text" placeholder="Ask gigaCHAT ..." autofocus autocapitalize="">-->
+<input class="input" type="text" placeholder="Ask gigaCHAT ..." autofocus>
+<p>gigaCHAT AI can produce false information. Always check important information.<br><a href="mailto:get.giga.chat@gmail.com?subject=gigaCHAT AI :: Contact Request" id="contactUs">Contact Us</a> | <a id="aboutLink">About</a></p>
+
+<div id="aboutWindow">about window here!</div>
+
+<script>
+
+  console.log('Easter Egg!')
+
+  let aboutLink = document.getElementById('aboutLink');
+  let aboutWindow = document.getElementById('aboutWindow');
+
+  aboutLink.onclick = function openAbout() {
+    aboutWindow.style.display = 'block';
+  };
+
+  let contactUs = document.getElementById('contactUs');
+  
+  contactUs.onclick = function contactAlert() {
+    alert('You can contact us in the email opening now.');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+  color: lightgray;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", "Segoe UI";
+  text-align: center;
+}
+body { 
+  background-color: rgb(26, 26, 26);
+}
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 0;
+  height: 5rem;
+  color: white;
+  background-color: rgba(26, 26, 26, 0.5);
+}
+input {
+  position: fixed;
+  bottom: 8vh;
+  left: 8vw;
+  right: 8vw;
+  background-color: rgb(82, 82, 82);
+  border: none;
+  min-height: 2rem;
+  max-height: 8rem;
+  border-radius: .75rem;
+}
+input::placeholder {
+  color: lightgrey;
+  font-family: monospace;
+}
+input:focus {
+  outline: none;
+}
+p {
+  position: fixed;
+  bottom: 6px;
+  left: 4vw;
+  right: 4vw;
+  font-size: .6rem;
+  line-height: 1.2rem;
+  text-align: center;
+}
+span {
+  font-family: monospace;
+  background-color: rgba(82, 82, 82, 0.5);
+  padding-inline: 4px;
+  padding-block: 0;
+  border-radius: 4px;
+}
+a {
+  color: rgb(0, 132, 255);
+  text-decoration: none;
+}
+
+#aboutWindow {
+  display: none;
+}
