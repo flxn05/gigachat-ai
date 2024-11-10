@@ -39,7 +39,7 @@ input {
   border: none;
   border-radius: .75rem;
   padding-block: .5rem;
-  width: 80vw;
+  width: 66vw;
   text-align: left;
   padding-inline: .75rem;
 }
@@ -52,7 +52,6 @@ input:focus {
   outline: none;
 }
 #sendButton {
-  right: 1rem;
   height: 2rem;
   width: 2rem;
   border-radius: 1rem;
@@ -63,7 +62,6 @@ input:focus {
   background-color: var(--defaultText);
 }
 #sendButton:focus {
-  filter: brightness(.75);
   outline: none;
 }
 .sendAnimation {
