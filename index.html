@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>gigaCHAT AI</title>
   <link rel="stylesheet" href="mobile.css">
   <link rel="stylesheet" href="animation.mobile.css">
 </head>
@@ -11,7 +11,15 @@
   
 <h1>gigaCHAT <span>AI</span></h1>
 <section id="chatSection"></section>
-<input class="input" type="text" placeholder="Ask gigaCHAT AI ..." autofocus>
+
+
+<section class="inputSection">
+  <input class="input" type="text" placeholder="Ask gigaCHAT AI ..." autofocus>
+  <button id="sendButton">
+    <img class="sendImage" src="send-button.png" alt="send">
+  </button>
+</section>
+
 <p class="smallText">gigaCHAT <span>AI</span> can produce false information. Always check important information.<br><a href="mailto:get.giga.chat@gmail.com?subject=gigaCHAT AI :: Contact Request" id="contactUs">Contact Us</a> | <a id="aboutLink">About</a></p>
 
 <div id="closeWindow">CLOSE</div>
@@ -55,6 +63,18 @@ let contactUs = document.getElementById('contactUs');
 contactUs.onclick = function contactAlert() {
   alert('You can contact us in the email opening now.');
   console.log('User tried to contact us')
+}
+
+// user input
+// 
+let sendButton = document.getElementById('sendButton');
+
+sendButton.onclick = function sendText() {
+  sendButton.classList.add('sendAnimation');
+  console.log('User tried to send message.')
+  setTimeout(() => {
+    sendButton.classList.remove('sendAnimation');
+  }, 250);
 }
 </script>
 
