@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="mobile.css">
   <link rel="stylesheet" href="animation.mobile.css">
 </head>
-<body>
+<body id="bodyId">
   
-<h1>gigaCHAT <span>AI</span></h1>
+<h1 id="h1">gigaCHAT <span>AI</span></h1>
 <section id="chatSection"></section>
 
 
@@ -20,9 +20,9 @@
   </button>
 </section>
 
-<p class="smallText">gigaCHAT <span>AI</span> can produce false information. Always check important information.<br><a href="mailto:get.giga.chat@gmail.com?subject=gigaCHAT AI :: Contact Request" id="contactUs">Contact Us</a> | <a id="aboutLink">About</a></p>
+<p class="smallText">gigaCHAT <span>AI</span> can produce false information.<br>Always check important information.<br><a href="mailto:get.giga.chat@gmail.com?subject=gigaCHAT AI :: Contact Request" id="contactUs">Contact Us</a> | <a id="aboutLink">About</a></p>
 
-<div id="closeWindow">CLOSE</div>
+<div id="closeWindow">Done</div>
 <div id="aboutWindow">
   <h2>About</h2>
   <p>Via the gigaCHAT <span>AI</span> web interface, you can directly communicate with an AI Chatbot. Our application aims to give you more control over your data by using private AI models. This guarantees you more privacy and control over your data.</p>
@@ -35,6 +35,7 @@
   <br>
 </div>
 
+
 <script>
   //easter egg
   console.log('Page loaded.')
@@ -42,11 +43,14 @@
   //open aboutWindow and closeWindow
 let aboutLink = document.getElementById('aboutLink');
 let aboutWindow = document.getElementById('aboutWindow');
-let closeWindow = document.getElementById('closeWindow')
+let closeWindow = document.getElementById('closeWindow');
+let aboutBackground = document.getElementById('h1');
 
 aboutLink.onclick = function openAbout() {
   aboutWindow.style.display = 'block';
   closeWindow.style.display = 'block';
+  aboutBackground.style.filter = 'blur(1px)';
+  aboutBackground.style.color = 'grey';
   console.log('User opened "About"');
 };
 
@@ -54,6 +58,8 @@ aboutLink.onclick = function openAbout() {
   closeWindow.onclick = function closeAbout() {
     aboutWindow.style.display = 'none';
     closeWindow.style.display = 'none';
+    aboutBackground.style.filter = 'none';
+    aboutBackground.style.color = 'var(--defaultText)';
     console.log('User closed "About"');
   }
 
@@ -76,6 +82,7 @@ sendButton.onclick = function sendText() {
     sendButton.classList.remove('sendAnimation');
   }, 250);
 }
+
 </script>
 
 </body>
