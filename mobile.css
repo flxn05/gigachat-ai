@@ -3,6 +3,7 @@
   --secondBg: rgb(82, 82, 82);
   --thirdBg: rgb(46, 46, 46);
   --defaultText: lightgrey;
+  --blue: rgb(0, 132, 255);
 }
 ::selection {
   background-color: rgba(0, 0, 0, 0.5);
@@ -46,12 +47,12 @@ input {
   text-align: left;
   padding-inline: .75rem;
   margin-right: 4px;
+  font-size: 1rem;
 }
 input::placeholder {
   color: var(--defaultText);
-  font-family: monospace;
   text-align: center;
-  font-size: .75rem;
+  font-size: 1rem;
 
 }
 input:focus {
@@ -81,7 +82,7 @@ input:focus {
   translate: -2px 2px;
 }
 .smallText {
-  font-size: .6rem;
+  font-size: .75rem;
   line-height: 1.2rem;
   text-align: center;
   margin-top: 1rem;
@@ -101,8 +102,9 @@ span {
   border-radius: 4px;
 }
 a {
-  color: rgb(0, 132, 255);
+  color: var(--blue);
   text-decoration: none;
+  font-size: 11px;
 }
 
 #aboutWindow {
@@ -123,9 +125,10 @@ a {
 #closeWindow {
   display: none;
   position: fixed;
-  top: calc(33vh - 2rem);
+  top: calc(33vh - 2.5rem);
   left: calc(100vw - 5rem);
-  letter-spacing: 2px;
   animation:  fadeIn .33s ease both;
   z-index: 2;
+  color: var(--blue);
+  font-size: 17pt;
 }
