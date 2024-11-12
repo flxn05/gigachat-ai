@@ -4,6 +4,10 @@
   --thirdBg: rgb(46, 46, 46);
   --defaultText: lightgrey;
   --blue: rgb(0, 132, 255);
+  --userText: white;
+  --aiText: white;
+  --userBg: rgb(83, 83, 83);
+  --aiBg: rgb(14, 14, 14);
 }
 ::selection {
   background-color: rgba(0, 0, 0, 0.5);
@@ -26,15 +30,14 @@ h1 {
   height: 5rem;
   color: white;
   background-color: rgba(26, 26, 26, 0.5);
-  position: fixed;
   text-align: center;
   width: 100vw;
 }
 #chatSection {
-  height: calc(100vh - 12rem);
+  height: calc(100vh - 13rem);
+  overflow-y: scroll;
 }
 .inputSection {
-  position: fixed;
   width: 100vw;
   bottom: 5rem;
 }
@@ -85,9 +88,6 @@ input:focus {
   font-size: .75rem;
   line-height: 1.2rem;
   text-align: center;
-  margin-top: 1rem;
-  position: fixed;
-  bottom: 0;
   width: 100vw;
 }
 p {
@@ -110,14 +110,14 @@ a {
 #aboutWindow {
   display: none;
   position: fixed;
-  top: 33vh;
+  top: 8vh;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: var(--thirdBg);
   padding: .75rem;
   overflow-y: scroll;
-  animation: fadeIn .33s ease both;
+  animation: fadeIn .5s cubic-bezier(.24,.58,.44,.91) both;
 }
 #aboutWindow * {
   text-align: left;
@@ -125,10 +125,49 @@ a {
 #closeWindow {
   display: none;
   position: fixed;
-  top: calc(33vh - 2.5rem);
+  top: calc(8vh - 2.5rem);
   left: calc(100vw - 5rem);
-  animation:  fadeIn .33s ease both;
+  animation:  fadeIn .5s cubic-bezier(.24,.58,.44,.91) both;
   z-index: 2;
   color: var(--blue);
   font-size: 17pt;
+}
+
+li {
+  line-height: 1.75rem;
+}
+
+/*AI CHAT SECTION*/
+
+#aiBubble {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-block: 2rem;
+}
+
+#aiOutput {
+  background-color: var(--aiBg);
+  color: var(--aiText);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+
+#userBubble {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-block: 2rem;
+}
+
+#userInput {
+  background-color: var(--userBg);
+  color: var(--userText);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
 }
