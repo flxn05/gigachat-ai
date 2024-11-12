@@ -1,5 +1,5 @@
 @keyframes fadeIn {
-  0% {translate: 0 66vh;}
+  0% {translate: 0 94vh;}
 }
 @keyframes sendAnimation {
   0% {transform: scale(1);}
