@@ -3,97 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gigaCHAT AI</title>
-  <link rel="stylesheet" href="mobile.css">
-  <link rel="stylesheet" href="animation.mobile.css">
+  <title>gigaAI</title>
   <script type="text/javascript" src="website3.js" defer></script>
+  <style>
+    :root {
+  --defBg: ;
+  --secondBg: rgb(82, 82, 82);
+  --thirdBg: rgb(46, 46, 46);
+  --defaultText: lightgrey;
+  --blue: rgb(0, 132, 255);
+  --userText: white;
+  --aiText: white;
+  --userBg: rgb(83, 83, 83);
+  --aiBg: rgb(14, 14, 14);
+}
+::selection {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+
+* {
+  color: var(--defaultText);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", "Segoe UI";
+  text-align: center;
+}
+body { 
+  background-color: rgb(26, 26, 26);
+}
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 0;
+  height: 5rem;
+  color: white;
+  background-color: rgba(26, 26, 26, 0.5);
+  text-align: center;
+  width: 100vw;
+}
+#chatSection {
+  height: calc(100vh - 13rem);
+  overflow-y: scroll;
+}
+.inputSection {
+  width: 100vw;
+  bottom: 5rem;
+}
+input {
+  background-color: var(--secondBg);
+  border: none;
+  border-radius: .75rem;
+  padding-block: .5rem;
+  width: 60vw;
+  text-align: left;
+  padding-inline: .75rem;
+  margin-right: 4px;
+  font-size: 1rem;
+}
+input::placeholder {
+  color: var(--defaultText);
+  text-align: center;
+  font-size: 1rem;
+
+}
+input:focus {
+  outline: none;
+}
+#sendButton {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  translate: 0 .4rem;
+  background-color: var(--defaultText);
+}
+#sendButton:focus {
+  outline: none;
+}
+.sendAnimation {
+  animation: sendAnimation .25s ease both;
+}
+.sendImage {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0;
+  translate: -2px 2px;
+}
+.smallText {
+  font-size: .75rem;
+  line-height: 1.2rem;
+  text-align: center;
+  width: 100vw;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.75rem;
+}
+span {
+  font-family: monospace;
+  background-color: rgba(82, 82, 82, 0.5);
+  padding-inline: 4px;
+  padding-block: 0;
+  border-radius: 4px;
+}
+a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 11px;
+}
+
+
+/*AI CHAT SECTION*/
+
+#aiBubble {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-block: 2rem;
+}
+
+#aiOutput {
+  background-color: var(--aiBg);
+  color: var(--aiText);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+
+#userBubble {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-block: 2rem;
+}
+
+#userInput {
+  background-color: var(--userBg);
+  color: var(--userText);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+    :root {
+      --defBg: rgb(26, 26, 26);
+      --secondBg: rgb(82, 82, 82);
+      --thirdBg: rgb(46, 46, 46);
+      --defaultText: lightgrey;
+      --blue: rgb(0, 132, 255);
+      --userText: white;
+      --aiText: white;
+      --userBg: rgb(83, 83, 83);
+      --aiBg: rgb(14, 14, 14);
+    }
+
+    body {
+      background-color: var(--defBg);
+      margin: 0;
+      padding: 0;
+      color: var(--defaultText);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI";
+    }
+
+    h1 {
+      font-weight: normal;
+      letter-spacing: -1px;
+      margin: 0;
+      height: 5rem;
+      color: white;
+      background-color: rgba(26, 26, 26, 0.5);
+      text-align: center;
+      width: 100vw;
+    }
+
+    #chatSection {
+      height: calc(100vh - 13rem);
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    .inputSection {
+  width: 100vw;
+  bottom: 5rem;
+}
+input {
+  background-color: var(--secondBg);
+  border: none;
+  border-radius: .75rem;
+  padding-block: .5rem;
+  width: 60vw;
+  text-align: left;
+  padding-inline: .75rem;
+  margin-right: 4px;
+  font-size: 1rem;
+}
+input::placeholder {
+  color: var(--defaultText);
+  text-align: center;
+  font-size: 1rem;
+
+}
+input:focus {
+  outline: none;
+}
+#sendButton {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  translate: 0 .4rem;
+  background-color: var(--defaultText);
+}
+#sendButton:focus {
+  outline: none;
+}
+.sendAnimation {
+  animation: sendAnimation .25s ease both;
+}
+.sendImage {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0;
+  translate: -2px 2px;
+}
+
+    #aiBubble, #userBubble {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    #aiBubble {
+      justify-content: flex-start;
+    }
+
+    #userBubble {
+      justify-content: flex-end;
+      animation: userFadeIn .5s ease both;
+    }
+
+    #aiOutput, #userInput {
+      max-width: 70%;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      text-align: left;
+      line-height: 1.5rem;
+      word-wrap: break-word;
+    }
+
+    #aiOutput {
+      background-color: var(--aiBg);
+      color: var(--aiText);
+    }
+
+    #userInput {
+      background-color: var(--userBg);
+      color: var(--userText);
+    }
+
+    .checkingMessage {
+      font-size: 0.9rem;
+      color: gray;
+      margin-inline: 1rem;
+    }
+
+    .badContent {
+      color: red !important;
+      border: 2px solid red;
+      border-radius: .5rem;
+    }
+
+
+    @keyframes userFadeIn {
+  0% {opacity: 0; transform: scale(.75);}
+    }
+
+  @keyframes aiFadeIn {
+    0% {opacity: 0; filter: blur(1rem); transform: scale(.75);}
+}
+@keyframes sendAnimation {
+  0% {transform: scale(1);}
+  50% {transform: scale(.9);}
+  100% {transform: scale(1);}
+}
+  </style>
 </head>
 <body id="bodyId">
   
-<h1 id="h1">gigaCHAT <span>AI</span></h1>
-<section id="chatSection">
+  <h1 id="h1">giga<span>AI</span></h1>
 
-<div id="aiBubble">
-  <div id="aiOutput">Hi! How can i help you?</div>
-</div>
+  <section id="chatSection">
+    <div id="aiBubble">
+      <div id="aiOutput">Hi! How can I help you?</div>
+    </div>
+  </section>
 
-  <div id="userBubble">
-    <div id="userInput">sigma rizzler</div>
-  </div>
+  <section class="inputSection">
+    <input id="inputField" class="input" type="text" placeholder="Ask gigaAI anything ..." autofocus maxlength="5000">
+    <button id="sendButton">
+      <img class="sendImage" src="send-button.png" alt="send">
+    </button>
+  </section>
 
-</section>
+  <script>
 
+const badWords = ["drug", "meth", "porn", "nigga", "nigga", "nugger", "nogger", "pussy", "vagina", "orgasm", "orgasmus", "cum", "sperma", "blasen", "blowjob"];
+let sendButton = document.getElementById('sendButton');
+let inputField = document.getElementById('inputField');
+let chatSection = document.getElementById('chatSection');
 
-<section class="inputSection">
-  <input id="inputField" class="input" type="text" placeholder="Ask gigaCHAT AI anything ..." autofocus>
-  <button id="sendButton">
-    <img class="sendImage" src="send-button.png" alt="send">
-  </button>
-</section>
+sendButton.onclick = function () {
+  let userInput = inputField.value.trim();
+  if (!userInput) return; // Ignore empty input
 
-<p class="smallText">gigaCHAT <span>AI</span> can produce false information.<br>Always check important information.<br><a href="mailto:get.giga.chat@gmail.com?subject=gigaCHAT AI :: Contact Request" id="contactUs">Contact Us</a> | <a id="aboutLink">About</a></p>
+  // Add user bubble
+  let userBubble = document.createElement('div');
+  userBubble.id = 'userBubble';
+  userBubble.innerHTML = `<div id="userInput">${userInput}</div>`;
+  chatSection.appendChild(userBubble);
 
-<div id="closeWindow">Done</div>
-<div id="aboutWindow">
-  <h2>About</h2>
-  <p>Via the gigaCHAT <span>AI</span> web interface, you can directly communicate with an AI Chatbot. Our application aims to give you more control over your data by using private AI models. This guarantees you more privacy and control over your data.</p>
-  <br>
+  // Add checking message
+  let checkingMessage = document.createElement('div');
+  checkingMessage.className = "checkingMessage";
+  checkingMessage.innerText = "(1/4) Checking";
+  userBubble.appendChild(checkingMessage);
 
-  <h2>What we work with</h2>
-  <p>gigaCHAT <span>AI</span> runs on various open-source AI models which the user can choose from:</p>
-    <li><b>LLaMA 3.2 Vision</b> allrounder LLM</li>
-    <li><b>wizard-vicuna-uncensored</b> de-ethicalized LLM</li>
-    <li><b>qwen2.5-coder</b> coding LLM</li>
-</div>
+  // Clear input
+  inputField.value = "";
 
+  // Check for bad words
+  let containsBadWords = badWords.some(word => userInput.toLowerCase().includes(word));
 
-<script>
-  //easter egg
-  console.log('Page loaded.')
-
-  //open aboutWindow and closeWindow
-let aboutLink = document.getElementById('aboutLink');
-let aboutWindow = document.getElementById('aboutWindow');
-let closeWindow = document.getElementById('closeWindow');
-let aboutBackground = document.getElementById('h1');
-
-aboutLink.onclick = function openAbout() {
-  aboutWindow.style.display = 'block';
-  closeWindow.style.display = 'block';
-  aboutBackground.style.filter = 'blur(1px)';
-  aboutBackground.style.color = 'grey';
-  console.log('User opened "About"');
-};
-
-  // closeWindow function
-  closeWindow.onclick = function closeAbout() {
-    aboutWindow.style.display = 'none';
-    closeWindow.style.display = 'none';
-    aboutBackground.style.filter = 'none';
-    aboutBackground.style.color = 'var(--defaultText)';
-    console.log('User closed "About"');
+  if (containsBadWords) {
+    setTimeout(() => {
+      userBubble.classList.add('badContent');
+      checkingMessage.innerText = "May contain racist/sexual/illegal/unethical content.";
+    }, 2000);
+  } else if (userInput.length > 800) {
+    setTimeout(() => {
+      checkingMessage.innerText = "(2/4) Submitting";
+      setTimeout(() => {
+        checkingMessage.innerText = "(3/4) Processing";
+        setTimeout(() => {
+          checkingMessage.innerText = "(4/4) Generating";
+        }, 2500);
+      }, 750);
+    }, 5500);
+  } else {
+    setTimeout(() => {
+      checkingMessage.innerText = "(2/4) Submitting";
+      setTimeout(() => {
+        checkingMessage.innerText = "(3/4) Processing";
+        setTimeout(() => {
+          checkingMessage.innerText = "(4/4) Generating";
+        }, 1000); //pocess
+      }, 330); //subm
+    }, 2000); //vali
   }
 
-  //contact
-let contactUs = document.getElementById('contactUs');
-
-contactUs.onclick = function contactAlert() {
-  alert('You can contact us in the email opening now.');
-  console.log('User tried to contact us')
-}
-
-// user input
-// 
-let sendButton = document.getElementById('sendButton');
-
-sendButton.onclick = function sendText() {
-  sendButton.classList.add('sendAnimation');
-  console.log('User tried to send message.')
-  setTimeout(() => {
-    sendButton.classList.remove('sendAnimation');
-  }, 250);
-}
+  // Scroll to the bottom of the chat
+  chatSection.scrollTop = chatSection.scrollHeight;
+};
 </script>
+
 
 </body>
 </html>
