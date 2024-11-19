@@ -316,7 +316,7 @@ input:focus {
 
   <script>
 
-const badWords = ["drug", "meth", "porn", "nigga", "nigga", "nugger", "nogger", "pussy", "vagina", "orgasm", "orgasmus", "cum", "sperma", "blasen", "blowjob"];
+const badWords = ["drug", "meth", "porn", "nigga", "nigga", "nugger", "nogger", "pussy", "vagina", "orgasm", "orgasmus", "cum", "sperma", "blasen", "blowjob", "bums", "geschlechtsverkehr", "oral", "anal", "rektal", "vaginal"];
 let sendButton = document.getElementById('sendButton');
 let inputField = document.getElementById('inputField');
 let chatSection = document.getElementById('chatSection');
@@ -348,15 +348,15 @@ sendButton.onclick = function () {
       userBubble.classList.add('badContent');
       checkingMessage.innerText = "May contain racist/sexual/illegal/unethical content.";
     }, 2000);
-  } else if (userInput.length > 800) {
+  } else if (userInput.length > 512) {
     setTimeout(() => {
       checkingMessage.innerText = "(2/4) Submitting";
       setTimeout(() => {
         checkingMessage.innerText = "(3/4) Processing";
         setTimeout(() => {
           checkingMessage.innerText = "(4/4) Generating";
-        }, 2500);
-      }, 750);
+        }, 5000);
+      }, 800);
     }, 5500);
   } else {
     setTimeout(() => {
@@ -365,7 +365,7 @@ sendButton.onclick = function () {
         checkingMessage.innerText = "(3/4) Processing";
         setTimeout(() => {
           checkingMessage.innerText = "(4/4) Generating";
-        }, 1000); //pocess
+        }, 1250); //pocess
       }, 330); //subm
     }, 2000); //vali
   }
